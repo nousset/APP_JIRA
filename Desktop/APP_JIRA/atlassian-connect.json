@@ -1,0 +1,65 @@
+{
+  "key": "test-generator-app",
+  "name": "TestGen AI",
+  "description": "Générateur de tests automatique pour vos user stories",
+  "vendor": {
+    "name": "QalilabAi",
+    "url": "https://jirasecondprime.onrender.com"
+  },
+  "baseUrl": "https://jirasecondprime.onrender.com",
+  "authentication": {
+    "type": "jwt"
+  },
+  "apiVersion": 1,
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
+  },
+  "scopes": [
+    "read",
+    "write"
+  ],
+  "modules": {
+    "jiraIssueGlances": [
+      {
+        "key": "generate-tests-glance",
+        "name": {
+          "value": "🧠 Générer les tests"
+        },
+        "icon": {
+          "width": 24,
+          "height": 24,
+          "url": "/static/brain.svg"
+        },
+        "content": {
+          "type": "label",
+          "label": {
+            "value": "Générer des tests"
+          }
+        },
+        "target": {
+          "type": "web_panel",
+          "url": "/test-generator"
+        },
+        "conditions": [
+          {
+            "condition": "issue_type",
+            "params": {
+              "issueTypes": ["Story", "Task", "Bug"]
+            }
+          }
+        ]
+      }
+    ],
+    "dialogs": [
+      {
+        "key": "test-generator-dialog",
+        "options": {
+          "size": "medium",
+          "chrome": true
+        },
+        "url": "/test-generator"
+      }
+    ]
+  }
+}
