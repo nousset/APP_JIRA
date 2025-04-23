@@ -20,7 +20,7 @@ JIRA_BASE_URL = os.getenv("JIRA_BASE_URL")
 JIRA_EMAIL = os.getenv("JIRA_EMAIL")
 JIRA_API_TOKEN = os.getenv("JIRA_API_TOKEN")
 JIRA_PROJECT_KEY = os.getenv("JIRA_PROJECT_KEY")
-API_URL = os.getenv("API_URL")
+LM_STUDIO_BASE_URL = os.getenv("LM_STUDIO_BASE_URL")
 APP_SECRET = os.getenv("APP_SECRET", "your-secret-key")  # À définir dans les variables d'environnement
 
 # Pour stocker les installations d'applications (en production, utilisez une base de données)
